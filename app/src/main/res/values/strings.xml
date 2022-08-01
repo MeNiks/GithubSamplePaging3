@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GithubApp</string>
+    <string name="retry">Retry</string>
+    <string name="oop_data_cannot_be_loaded">Oop click here to retry</string>
+    <string name="unable_to_load_pr_list">Unable to load your pull request</string>
+    <string name="unable_to_load_pr_list_desc">We are currently unable to load your pull request, please try again after sometime.</string>
+    <string name="no_internet_available">No internet available</string>
+    <string name="no_internet_available_desc">You internet connection seems to be unavailable please check your internet connection.</string>
+    <string name="pr_empty_list">No record Found</string>
+    <string name="pr_empty_list_desc">Your closed pull request list seems to be empty</string>
+    <string name="user_organisation_name">User/Organisation Name</string>
+    <string name="repo_name">Repo Name</string>
+    <string name="view_closed_pull_request">View Closed Pull Request</string>
+    <string name="type_user_org_name_here">Type user/org name here</string>
+    <string name="type_repo_name_here">Type repo name here</string>
+    <string name="mandatory_org_name">Please enter username or organisation name</string>
+    <string name="mandatory_repo_name">Please enter repository name</string>
+    <string name="repo_not_found">Error - 404</string>
+    <string name="repo_not_found_desc">This is not the page you are looking for.</string>
+    <string name="created_at">Created at - %s</string>
+    <string name="closed_at">Closed at - %s</string>
+</resources>

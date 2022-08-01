@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.niks.githubapp.ext.ImageExt" />
+
+        <variable
+            name="obj"
+            type="com.niks.githubapp.network.vo.PullRequestVo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_row_item"
+        android:padding="10dp"
+        tools:layout_margin="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/prTitleTv"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{obj.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="[TP-123] This was the critical issue in video player which was leading rendering issue" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userPicIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:src="@{obj.user.avatarUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prTitleTv"
+            app:placeholder="@{ImageExt.getDefaultUserImage()}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameTv"
+            style="@style/SubTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="@{obj.user.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userPicIv"
+            app:layout_constraintTop_toTopOf="@id/userPicIv"
+            tools:text="Nikhilesh Patve" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createdTimeTv"
+            style="@style/SubTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/created_at(obj.getReadableCreatedDate())}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userPicIv"
+            app:layout_constraintTop_toBottomOf="@id/userNameTv"
+            tools:text="Created At - 12/10/2022 12:45 PM" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/closedTimeTv"
+            style="@style/SubTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="@{@string/closed_at(obj.getReadableClosedAt())}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userPicIv"
+            app:layout_constraintTop_toBottomOf="@id/createdTimeTv"
+            tools:text="Closed On - 12/10/2022 12:45 PM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
